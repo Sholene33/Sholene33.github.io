@@ -2,6 +2,6 @@
 
 
 Sabrina Holene
-Sholene@my.waketech.edu
+Snholene@my.waketech.edu
 This is my school account.
 This is the repo for the first lab. 
