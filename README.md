@@ -28,5 +28,5 @@ This is the repo for the first lab.
 * Considering a career in Forensic Accounting
 
 ## Websites I Recommend 
-* [Amazon](www.amazon.com) - I think that Amazon provides convenience when shopping for a wide range of things.
-* [Cool Math Games](https://www.coolmathgames.com/) - Thinking of websites I visit often or would recommend, other than Google, was hard. But throughout my childhood, I would say that Cool Math Games was probably the site I visited the most.
+* [Amazon](www.amazon.com) - I think that Amazon provides convenience when shopping for a wide range of things that cater to a lot of people. 
+* [Cool Math Games](https://www.coolmathgames.com/) - Thinking of websites I visit often or would recommend, other than Google, was hard. But throughout my childhood, I would say that Cool Math Games was probably the site I visited the most. It is a collection of multiple games in one place. 
