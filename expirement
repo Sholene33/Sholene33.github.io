@@ -14,7 +14,6 @@ function fetchGradeData() {
             //Check if we're successful
             if(xhr.status !== 200){
                 console.error("Could not get grades. Status: " + xhr.status);
-                return;
             }
             // And then call the function to update the HTML with our data
             PopulateGradebook(JSON.parse(xhr.responseText));
@@ -30,7 +29,7 @@ function PopulateGradebook(data) {
     let tableElm = document.getElementById("gradebook");//Get the gradebook table element
         data.forEach(function(assignment){
             let row = document.createElement("tr");//create a table row element
-            let columns = {}; //Handy place to stick the columns of information
+            let columns = []; //Handy place to stick the columns of information
             columns.name = document.createElement('td');//the first columns table data will be the name
             columns.name.appendChild(
                 // Concentrate the full name: "Last_name, First_name"
@@ -52,6 +51,31 @@ function PopulateGradebook(data) {
 
 //TODO REMOVE THIS
 // Call the Stubs to demonstrate the workflow
-fetchGradeData();
-
+const gradeData = fetchGradeData();
+PopulateGradebook(gradeData);
 // END REMOVE
+
+
+CREATE TABLE STUDENTS (   
+    STUDENT_ID SERIAL PRIMARY KEY,   
+    FIRST_NAME VARCHAR(50),   
+    LAST_NAME VARCHAR(50),   
+    EMAIL VARCHAR(100),   
+    ENROLLMENT_DATE DATE   
+    );
+
+CREATE TABLE ASSIGNMENTS (   
+    ASSIGNMENT_ID SERIAL PRIMARY KEY,   
+    TITLE VARCHAR(100),   
+    DESCRIPTION TEXT,   
+    DUE_DATE DATE,   
+    STUDENT_ID INT REFERENCES STUDENTS(STUDENT_ID)   
+    );  
+
+    INSERT INTO STUDENTS (FIRST_NAME, LAST_NAME, EMAIL)   
+    VALUES ('Sabrina', 'Holene', 'snholene@my.waketech.edu');   
+        Select * from students
+        Select * from assignments
+INSERT INTO ASSIGNMENTS (TITLE, DESCRIPTION, DUE_DATE, STUDENT_ID) 
+VALUES ('LAB7 POSTGRES', 'SET UP A DATABASE AND INSERT RECORDS AS DESCRIBED IN THE INSTRUCTIONS.','2025-03-14', 1);
+SELECT * FROM ASSIGNMENTS, STUDENTS WHERE ASSIGNMENTS.STUDENT_ID = STUDENTS.STUDENT_ID
